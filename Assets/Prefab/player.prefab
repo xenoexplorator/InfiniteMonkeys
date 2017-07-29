@@ -129,6 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  basicAttackPrefab: {fileID: 1944521974042826, guid: 0e2cc3f3c4f0b434a8630d999e297579,
+    type: 2}
+  aimCursorObject: {fileID: 1436889356614974, guid: eba03aadf3c3c0b4394e1d171390646c,
+    type: 2}
   baseSpeed: 0.05
   ShieldAvailable: 1
 --- !u!212 &212591538223244040

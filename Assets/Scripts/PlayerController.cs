@@ -10,6 +10,7 @@ public class PlayerController : JamObject {
 	public const float ATTACK_DISTANCE = 0.8f;
 
 	public GameObject basicAttackPrefab;
+	public GameObject aimCursorObject;
 
 	private  float verticalSpeed = 0;
 	private float horizontalSpeed = 0;
@@ -18,6 +19,7 @@ public class PlayerController : JamObject {
 	private int sKey = 0;
 	private int dKey = 0;
 	private int spaceKey = 0;
+	private Vector3 mouseRealPosition;
 
 	private int health = MAX_HEALTH;
 
@@ -41,6 +43,18 @@ public class PlayerController : JamObject {
 
 		if (spaceKey == 1)
 			Attack ();
+
+		if (Input.GetKeyDown (KeyCode.E)) {
+			if (AOEAvailable) {
+				if (isAimingAOE)
+					StopAimingAOE ();
+				else
+					PrepareForAOEAttack ();
+			}
+		}
+		if (isAimingAOE)
+			PrepareForAOEAttack ();
+			
 	}
 
 	void GetInputs()
@@ -53,24 +67,26 @@ public class PlayerController : JamObject {
 		spaceKey = Input.GetKeyDown (KeyCode.Space) ? 1 : 0;
 	}
 
+	void OnGUI()
+	{
+		Camera  c = Camera.main;
+		Event   e = Event.current;
+		Vector2 mousePos = new Vector2();
+
+		// Get the mouse position from Event.
+		// Note that the y position from Event is inverted.
+		mousePos.x = e.mousePosition.x;
+		mousePos.y = c.pixelHeight - e.mousePosition.y;
+
+		mouseRealPosition = c.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, c.nearClipPlane));
+	}
+
 	void Attack()
 	{
 		Instantiate (basicAttackPrefab, (this.transform.position + (_direction * ATTACK_DISTANCE)), Quaternion.identity);
 		//Who knows what will happen here. Not me, that's for sure.
 	}
 
-	
-	//Shield Logic. Do we even have a shield?
-	public bool ShieldAvailable = true;
-	private bool ShieldUp = false;
-	private int ShieldUsed = 0;
-	private int ShieldMaxDamage = 3;
-	void SpecialShield()
-	{
-		ShieldAvailable = false;
-		ShieldUp = true;
-	}
-		
 	//I guessed this is how we should take damage
 	public void TakeDamage(int dmg)
 	{
@@ -84,6 +100,56 @@ public class PlayerController : JamObject {
 			GameOver ();
 	}
 
+	#region Specials!
+	#region AOE Attack
+	private bool AOEAvailable = true;
+	private bool isAimingAOE = false;
+	private GameObject _aimCursor;
+	void PrepareForAOEAttack()
+	{
+		if (isAimingAOE) {
+			_aimCursor.transform.position = new Vector3 (mouseRealPosition.x, mouseRealPosition.y);
+			if (Input.GetMouseButtonDown (0))
+				AOEAttack ();
+		} else {
+			isAimingAOE = true;
+			_aimCursor = Instantiate (aimCursorObject, new Vector3(mouseRealPosition.x, mouseRealPosition.y), Quaternion.identity);
+		}
+	}
+
+	void StopAimingAOE()
+	{
+		isAimingAOE = false;
+		if (_aimCursor != null)
+			Destroy (_aimCursor);
+	}
+
+	void AOEAttack()
+	{
+		var attack = Instantiate (basicAttackPrefab);
+		attack.transform.localScale = new Vector3 (5, 5);
+		attack.transform.position = mouseRealPosition;
+		AOEAvailable = false;
+		StopAimingAOE ();
+	}
+	#endregion
+
+
+	#region Shield
+	//Shield Logic. Do we even have a shield?
+	public bool ShieldAvailable = true;
+	private bool ShieldUp = false;
+	private int ShieldUsed = 0;
+	private int ShieldMaxDamage = 3;
+	void SpecialShield()
+	{
+		ShieldAvailable = false;
+		ShieldUp = true;
+	}
+	#endregion	
+
+
+	#region FullHeal
 	//FULL HEAL!!!
 	private bool FullHealAvailable = true;
 	void SpecialFullHeal()
@@ -91,6 +157,11 @@ public class PlayerController : JamObject {
 		health = MAX_HEALTH;
 		FullHealAvailable = false;
 	}
+	#endregion
+
+	#endregion
+
+
 
 	//Shhhhhh, Shhhhhhhh, it's all over now
 	public void GameOver()
