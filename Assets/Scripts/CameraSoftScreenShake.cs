@@ -9,7 +9,6 @@ public class CameraSoftScreenShake : MonoBehaviour {
 	public float shakeAmount = 0.7f;
 
 	void Update() {
-		var test = Random.insideUnitSphere * shakeAmount;
 		something.transform.localPosition = Random.insideUnitSphere * shakeAmount;
 	}
 
