@@ -1,16 +1,22 @@
- abbbbbbbc
-areeeeeeefabbbc
-djhhhhhhhideeef
-dpbbbbbbbcdeeef
-ghhljhhhlfdeeef
-abbrpbc dpreeef
-deeeeef djhhhhi
-deeeeefarpbbbc
-ghhhhhideeeeef
-     abreeeeef
-     deeeeeeef
-     deeeeeeef
-     deeeeeeef
-     deeeeeeef
-     deeeeeeef
-     ghhhhhhhi
+BCGHHHHHHHHHID
+EFabbbbbbbbbcD
+HIde0eeeeeeefD
+CareeeeeeeeefD
+FdjhhhhhhhhhiGHHHHHHHHH
+FdfABBBBBBBBCABCabbbbcD
+FdfGHHHHHHHHIDEFdeeeefD
+FdpbbbbbbbbbcDEFde2eefD
+IghhhljhhhhlfGHIdeeeefD
+BBBBCdfABBCdpbbbreeeefD
+HHHHIdfGHHIdjhhhhhhhhiG
+CabbbrpbcACdfABBBBBBBBB
+FghhhhhhiDFdfDEEEEEE
+FABBBBBBCDFdfDEEEEEE
+        IGIdfGHHHHHH
+        CabrpbbbbbcA
+        Fdeeeeeee2fD
+        FdeeeeeeeefD
+        FdeeeeeeeefD
+        Fde2eeeeeefD
+        FghhhhhhhhiG
+        IABBBBBBBBBC
