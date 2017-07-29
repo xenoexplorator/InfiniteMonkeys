@@ -14,6 +14,7 @@ public class PlayerController : JamObject {
 	public GameObject basicAttackPrefab;
 	public GameObject aimCursorObject;
 	public float baseSpeed;
+	public Animator anim;
 
 	#region Properties
 	private  float verticalSpeed = 0;
@@ -32,6 +33,14 @@ public class PlayerController : JamObject {
 		GetInputs ();
 		verticalSpeed = wKey - sKey;
 		horizontalSpeed = dKey - aKey;
+
+		if (horizontalSpeed == 1)
+			anim.SetTrigger ("side_walk_right");
+		else if (horizontalSpeed == -1)
+			anim.SetTrigger ("side_walk_left");
+		else
+			anim.SetTrigger ("idle");
+		
 		playerPosition = this.transform.position;
 
 		if (horizontalSpeed != 0 || verticalSpeed != 0) {
