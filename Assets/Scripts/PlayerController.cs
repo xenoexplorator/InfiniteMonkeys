@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : JamObject {
 
+	public static Vector3 playerPosition;
+
 	public const int MAX_HEALTH = 100;
 
 	private  float verticalSpeed = 0;
@@ -23,7 +25,6 @@ public class PlayerController : JamObject {
 
 	// Update is called once per frame
 	void Update () {
-
 		wKey = Input.GetKey (KeyCode.W) ? 1 : 0;
 		aKey = Input.GetKey (KeyCode.A) ? 1 : 0;
 		sKey = Input.GetKey (KeyCode.S) ? 1 : 0;
@@ -36,6 +37,7 @@ public class PlayerController : JamObject {
 		if (horizontalSpeed != 0 || verticalSpeed != 0) {
 			direction = (Mathf.Atan2 (verticalSpeed, horizontalSpeed)) * 180 / Mathf.PI;
 			Move ();
+			playerPosition = this.transform.position;
 		}
 
 	}
