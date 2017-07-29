@@ -32,6 +32,9 @@ public class DungeonParser : MonoBehaviour {
 				else if (c == '0') { // player spawn
 					Instantiate(TileMap[4], new Vector3(x, -y, 0), Quaternion.identity);
 					player.transform.position = new Vector3(x, -y, 0);
+				} else if (c >= '1' && c <= '2') { // princess & enemy spawns
+					Instantiate(TileMap[4], new Vector3(x, -y, 0), Quaternion.identity);
+					Instantiate(Spawns[c - '1'], new Vector3(x, -y, 0), Quaternion.identity);
 				} else {
 					var id = Array.IndexOf(TileIDs, c);
 					if (id == -1) Debug.Log(c);
