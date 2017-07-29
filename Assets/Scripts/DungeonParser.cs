@@ -16,18 +16,19 @@ public class DungeonParser : MonoBehaviour {
 	public void Update() { }
 
 	public void Parse() {
-		var scale = 1f;
+		var step = 0.64f;
 		var y = 0f;
-		var lines = Fichier.text.Split(new[] { "\n" }, StringSplitOptions.None);
+		var lines = Fichier.text.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
 		foreach (var line in lines) {
-			Debug.Log(line);
 			float x = 0f;
 			foreach (char c in line) {
+				Debug.Log(c);
+				Debug.Log(c == '\n');
 				var id = Array.IndexOf(TileIDs, c);
 				Instantiate(TileMap[id], new Vector3(x, y, 0), Quaternion.identity);
-				x += scale;
+				x += step;
 			}
-			y += scale;
+			y += step;
 		}
 	}
 }
