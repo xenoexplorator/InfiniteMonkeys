@@ -1,16 +1,16 @@
-BBBBBBBBBBBBBBB
-BBOOOOOOOOBBBBB
-BVOOOOOOOOBBBBB
-BVBBBBBBBBBOOOB
-BVVVVVVVVVBOOOB
-BBBBVBBBBVBOOOB
-BOOOOOOBBVVOOOB
-BOOOOOOBBVBBBBB
-BBBBBBBOOOOOOOB
-BBBBBBBOOOOOOOB
-BBBBBBBOOOOOOOB
-BBBBBBBOOOOOOOB
-BBBBBBBOOOOOOOB
-BBBBBBBOOOOOOOB
-BBBBBBBOOOOOOOB
-BBBBBBBBBBBBBBB
+ abbbbbbbbc    
+a eeeeeeeef    
+deeeeeeeeefaaaa
+de hhhhhhhieeea
+deeeeeeeeeaeeea
+aaaacaaaaeaeeea
+aeeeeeeaaeeeeea
+aeeeeeeaaeaaaaa
+aaaaaaaeeeeeeea
+      aeeeeeeea
+      aeeeeeeea
+      aeeeeeeea
+      aeeeeeeea
+      aeeeeeeea
+      aeeeeeeea
+      aaaaaaaaa

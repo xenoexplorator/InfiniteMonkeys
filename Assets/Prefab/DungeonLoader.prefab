@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1282579097342276}
+  m_IsPrefabParent: 1
+--- !u!1 &1282579097342276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4506621929196496}
+  - component: {fileID: 114982504697810522}
+  m_Layer: 0
+  m_Name: DungeonLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4506621929196496
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282579097342276}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114982504697810522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282579097342276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f32bd45c11141943bb472d2b276c673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TileMap:
+  - {fileID: 1079399708815284, guid: 239cc7b262314544fb6c49392921716a, type: 2}
+  - {fileID: 1926608259894762, guid: b3d5dccfdc1339c40a6d29885f4dec90, type: 2}
+  - {fileID: 1344900063413484, guid: 4c679d55c9bfd9b458249b98dc46417a, type: 2}
+  - {fileID: 1592746813538322, guid: 149be5d615bfb2f44807e58682a7713f, type: 2}
+  - {fileID: 1863111580365410, guid: 942c71e64dc1b834fb8d0abe45e3a63a, type: 2}
+  - {fileID: 1547490118444600, guid: 1817828b46ad10a4faf1a30e7b1589cf, type: 2}
+  - {fileID: 1632120260296312, guid: 92523bdfe651b874dbcac39d47255d5a, type: 2}
+  - {fileID: 1813833458060496, guid: 029acb31e32cc1c4384f094331a04b02, type: 2}
+  - {fileID: 1437231816631858, guid: ad0d22831e15c994083e5a67508b1d9b, type: 2}
+  TileIDs: 610062006300640065006600670068006900
+  Fichier: {fileID: 4900000, guid: 1cad784774023d54a8a50b0683515562, type: 3}

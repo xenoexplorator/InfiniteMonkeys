@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class DungeonParser : MonoBehaviour {
 
+	public TextAsset Fichier;
+	public float step;
 	public GameObject[] TileMap;
 	public char[] TileIDs;
-	public TextAsset Fichier;
 
 	public void Start() {
 		Parse();
@@ -16,18 +17,18 @@ public class DungeonParser : MonoBehaviour {
 	public void Update() { }
 
 	public void Parse() {
-		var step = 0.64f;
-		var y = 0f - 7*step;
+		var y = 0f - 8*step;
 		var lines = Fichier.text.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
 		foreach (var line in lines) {
-			float x = 0f - 7*step;
+			y += step;
+			float x = 0f - 8*step;
 			foreach (char c in line) {
+				x += step;
+				if (c == ' ') continue;
 				var id = Array.IndexOf(TileIDs, c);
 				// File line numbers and Unity y-coordinate are in opposite directions
 				Instantiate(TileMap[id], new Vector3(x, -y, 0), Quaternion.identity);
-				x += step;
 			}
-			y += step;
 		}
 	}
 }
