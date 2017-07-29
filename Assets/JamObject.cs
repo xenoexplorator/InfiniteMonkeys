@@ -13,6 +13,18 @@ public class JamObject : MonoBehaviour {
 		}
 	}
 
+	public void FlipXToLeft()
+	{
+		var scalex = this.transform.localScale.x;
+		this.transform.localScale = new Vector3(Mathf.Abs(scalex) * -1, this.transform.localScale.y);
+	}
+
+	public void FlipXToRight()
+	{
+		var scalex = this.transform.localScale.x;
+		this.transform.localScale = new Vector3(Mathf.Abs(scalex), this.transform.localScale.y);
+	}
+
 	public float Y{
 		get{
 			return this.transform.position.y; 
@@ -25,7 +37,7 @@ public class JamObject : MonoBehaviour {
 	private Vector3 _direction;
 	public float direction{
 		get{ 
-			return Mathf.Atan2 (_direction.x, _direction.y);
+			return Mathf.Atan2 (_direction.y, _direction.x);
 		}
 		set{ 
 			var _x = Mathf.Cos (value / 180 * Mathf.PI);
