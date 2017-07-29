@@ -8,6 +8,7 @@ public class BasicEnemy : JamObject {
 	private float distanceToStart;
 	private bool aggroed = false;
 	private Vector3 startingLocation;
+	private bool hasBeenLeashed;
 
 	public float baseSpeed;
 	public float AggroDistance;
@@ -25,7 +26,9 @@ public class BasicEnemy : JamObject {
 	void Update () {
 		distanceToPlayer = Mathf.Abs(Vector3.Distance (this.transform.position, PlayerController.playerPosition));
 		distanceToStart = Mathf.Abs(Vector3.Distance (this.transform.position, this.startingLocation));
-		aggroed = distanceToPlayer < AggroDistance ? true : false;
+		if (distanceToStart > LeashDistance)
+			hasBeenLeashed = true;
+		aggroed = (distanceToPlayer < AggroDistance && !hasBeenLeashed) ? true : false;
 
 		speed = aggroed ? baseSpeed : baseSpeed / 2;
 
@@ -38,5 +41,7 @@ public class BasicEnemy : JamObject {
 		_direction.Normalize ();
 		direction += Random.Range (-anglePadding, anglePadding);
 		Move ();
+		if (distanceToStart < AggroDistance)
+			hasBeenLeashed = false;
 	}
 }
