@@ -44,4 +44,11 @@ public class BasicEnemy : JamObject {
 		if (distanceToStart < AggroDistance)
 			hasBeenLeashed = false;
 	}
+
+	public void TakeDamage(int dmg)
+	{
+		health -= dmg;
+		if (health <= 0)
+			Destroy (this.gameObject);
+	}
 }

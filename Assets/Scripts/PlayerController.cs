@@ -7,6 +7,9 @@ public class PlayerController : JamObject {
 	public static Vector3 playerPosition;
 
 	public const int MAX_HEALTH = 100;
+	public const float ATTACK_DISTANCE = 0.8f;
+
+	public GameObject basicAttackPrefab;
 
 	private  float verticalSpeed = 0;
 	private float horizontalSpeed = 0;
@@ -14,6 +17,7 @@ public class PlayerController : JamObject {
 	private int aKey = 0;
 	private int sKey = 0;
 	private int dKey = 0;
+	private int spaceKey = 0;
 
 	private int health = MAX_HEALTH;
 
@@ -25,12 +29,7 @@ public class PlayerController : JamObject {
 
 	// Update is called once per frame
 	void Update () {
-		wKey = Input.GetKey (KeyCode.W) ? 1 : 0;
-		aKey = Input.GetKey (KeyCode.A) ? 1 : 0;
-		sKey = Input.GetKey (KeyCode.S) ? 1 : 0;
-		dKey = Input.GetKey (KeyCode.D) ? 1 : 0;
-		speed = Input.GetKey (KeyCode.LeftShift) ? baseSpeed * 2 : baseSpeed;
-
+		GetInputs ();
 		verticalSpeed = wKey - sKey;
 		horizontalSpeed = dKey - aKey;
 
@@ -40,10 +39,23 @@ public class PlayerController : JamObject {
 			playerPosition = this.transform.position;
 		}
 
+		if (spaceKey == 1)
+			Attack ();
+	}
+
+	void GetInputs()
+	{
+		wKey = Input.GetKey (KeyCode.W) ? 1 : 0;
+		aKey = Input.GetKey (KeyCode.A) ? 1 : 0;
+		sKey = Input.GetKey (KeyCode.S) ? 1 : 0;
+		dKey = Input.GetKey (KeyCode.D) ? 1 : 0;
+		speed = Input.GetKey (KeyCode.LeftShift) ? baseSpeed * 2 : baseSpeed;
+		spaceKey = Input.GetKeyDown (KeyCode.Space) ? 1 : 0;
 	}
 
 	void Attack()
 	{
+		Instantiate (basicAttackPrefab, (this.transform.position + (_direction * ATTACK_DISTANCE)), Quaternion.identity);
 		//Who knows what will happen here. Not me, that's for sure.
 	}
 
