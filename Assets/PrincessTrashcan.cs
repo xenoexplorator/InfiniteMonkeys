@@ -30,7 +30,7 @@ public class PrincessTrashcan : JamObject {
 	private int frameTimer = 0;
 	private int maxFramesForQuip = 250;
 	// Update is called once per frame
-	void Update () {
+	public void Update () {
 		isInRangeToPlayer = Vector3.Distance (this.transform.position, PlayerController.playerPosition) < DISTANCE_TO_INSULT ? true : false;
 		if(isInRangeToPlayer)
 			PlayerController.princessInRange = this;
@@ -70,7 +70,7 @@ public class PrincessTrashcan : JamObject {
 		}
 	}
 		
-	void UpdateQuip()
+	protected void UpdateQuip()
 	{
 		if (textBubble.activeSelf)
 			frameTimer++;
@@ -78,7 +78,7 @@ public class PrincessTrashcan : JamObject {
 			textBubble.SetActive (false);
 	}
 
-	void Quip(string speach)
+	protected void Quip(string speach)
 	{
 		textBubble.SetActive (true);
 		frameTimer = 0;
