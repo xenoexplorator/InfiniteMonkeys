@@ -9,7 +9,7 @@ public class PlayerController : JamObject {
 	public static PrincessTrashcan princessInRange;
 
 	public const int MAX_HEALTH = 100;
-	public const float ATTACK_DISTANCE = 0.8f;
+	public const float ATTACK_DISTANCE = 1.8f;
 
 	public GameObject basicAttackPrefab;
 	public GameObject aimCursorObject;
@@ -143,7 +143,9 @@ public class PlayerController : JamObject {
 
 	void Attack()
 	{
-		Instantiate (basicAttackPrefab, (this.transform.position + (_direction * ATTACK_DISTANCE)), Quaternion.identity);
+		var attack = Instantiate (basicAttackPrefab, (this.transform.position + (_direction * ATTACK_DISTANCE)), Quaternion.identity);
+		if (_direction.x < 0)
+			attack.GetComponent<SpriteRenderer> ().flipX = false;
 	}
 
 	//I guessed this is how we should take damage
@@ -188,9 +190,10 @@ public class PlayerController : JamObject {
 
 	void AOEAttack()
 	{
-		var attack = Instantiate (basicAttackPrefab);
-		attack.transform.localScale = new Vector3 (5, 5);
-		attack.transform.position = mouseRealPosition;
+		var attack = Instantiate (basicAttackPrefab, (this.transform.position + (_direction * ATTACK_DISTANCE)), Quaternion.identity);
+		attack.transform.position = new Vector3(mouseRealPosition.x,mouseRealPosition.y,0);
+		//var attack = Instantiate (basicAttackPrefab,mouseRealPosition,Quaternion.identity);
+		attack.transform.localScale = new Vector3 (5, 5, 0);
 		AOEAvailable = false;
 		StopAimingAOE ();
 	}

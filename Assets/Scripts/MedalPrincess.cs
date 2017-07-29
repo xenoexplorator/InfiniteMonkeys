@@ -22,6 +22,7 @@ public class MedalPrincess : PrincessTrashcan {
 
 	IEnumerator GiveMedal()
 	{
+		medailleGiven = true;
 		yield return new WaitForSecondsRealtime (2);
 		Quip ("Congrats, you needed my help! Have a medal.");
 		medaille.speed = medailleSpeed;

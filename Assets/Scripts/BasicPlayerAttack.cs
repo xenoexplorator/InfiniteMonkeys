@@ -11,6 +11,9 @@ public class BasicPlayerAttack : JamObject {
 	
 	// Update is called once per frame
 	void Update () {
+		if (timer == 0) {
+			timer = 10;
+		}
 		if (spentTime > timer)
 			Destroy (this.gameObject);
 		
