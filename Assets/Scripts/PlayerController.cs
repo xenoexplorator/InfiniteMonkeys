@@ -29,6 +29,11 @@ public class PlayerController : JamObject {
 	public static int health = MAX_HEALTH;
 	#endregion
 
+	void Start()
+	{
+		health = MAX_HEALTH;
+	}
+
 	// Update is called once per frame
 	void Update () {
 
