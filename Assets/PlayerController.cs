@@ -15,11 +15,10 @@ public class PlayerController : JamObject {
 
 	private int health = MAX_HEALTH;
 
-	private float baseSpeed;
+	public float baseSpeed;
 
 	// Use this for initialization
 	void Start () {
-		baseSpeed = speed;
 	}
 
 	// Update is called once per frame
