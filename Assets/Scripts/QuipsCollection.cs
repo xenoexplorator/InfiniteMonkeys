@@ -20,7 +20,7 @@ public class QuipsCollection : MonoBehaviour {
 	void Start()
 	{
 		WelcomeQuips.Add (@"Hey, if you're bad, I can help you.");
-		WelcomeQuips.Add (@"I only listen to trash music.");
+		WelcomeQuips.Add (@"I'm the best! And the worst. Mostly the worst.");
 		WelcomeQuips.Add (@"If you had an inventory I'd sell you stuff.");
 		WelcomeQuips.Add (@"You again? I guess bad company is better than alone.");
 		WelcomeQuips.Add (@"One man's trash is another princess's.... trash?");

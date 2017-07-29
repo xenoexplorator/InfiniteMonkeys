@@ -28,7 +28,7 @@ public class PrincessTrashcan : JamObject {
 		
 	}
 	private int frameTimer = 0;
-	private int maxFramesForQuip = 150;
+	private int maxFramesForQuip = 250;
 	// Update is called once per frame
 	void Update () {
 		isInRangeToPlayer = Vector3.Distance (this.transform.position, PlayerController.playerPosition) < DISTANCE_TO_INSULT ? true : false;
