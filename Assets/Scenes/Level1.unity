@@ -389,7 +389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47.00006, y: -107}
+  m_AnchoredPosition: {x: -47, y: -107}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998049883
@@ -457,7 +457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47.00006, y: -228}
+  m_AnchoredPosition: {x: -47, y: -228}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1022080480
@@ -614,7 +614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -81.589966, y: 79}
+  m_AnchoredPosition: {x: -81.58984, y: 79}
   m_SizeDelta: {x: 139, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214619843
@@ -682,7 +682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47.00006, y: -167}
+  m_AnchoredPosition: {x: -47, y: -167}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1230807620
@@ -956,13 +956,14 @@ MonoBehaviour:
   armor: {fileID: 1230807620}
   teleport: {fileID: 998049883}
   AOEAvailable: {fileID: 21300000, guid: f42ab962624b7b246b061b2ef14a378f, type: 3}
-  AOENotAvailable: {fileID: 0}
+  AOENotAvailable: {fileID: 21300000, guid: 819b0183b96028643b48f19139cfdf4c, type: 3}
   HealAvailable: {fileID: 21300000, guid: 069402d3b7191874caa98d632f431d1a, type: 3}
-  HealNotAvailable: {fileID: 0}
+  HealNotAvailable: {fileID: 21300000, guid: fcd96a55d381abe42b01bb55d9122459, type: 3}
   armorAvailable: {fileID: 21300000, guid: fbe432be23af4794e9dc0a44fe873a07, type: 3}
-  armorNotAvailable: {fileID: 0}
+  armorNotAvailable: {fileID: 21300000, guid: 02321430037974e43b96135c04652fc9, type: 3}
   teleportAvailable: {fileID: 21300000, guid: 7d9cd9d205cba744aac73be80b52ff76, type: 3}
-  teleportNotAvailable: {fileID: 0}
+  teleportNotAvailable: {fileID: 21300000, guid: 3f89810e15d6d164f93c26e7130965ab,
+    type: 3}
 --- !u!4 &2010898654
 Transform:
   m_ObjectHideFlags: 0
