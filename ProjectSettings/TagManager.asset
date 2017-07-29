@@ -49,3 +49,6 @@ TagManager:
   - name: Characters
     uniqueID: 3120373407
     locked: 0
+  - name: Roofs
+    uniqueID: 1280442453
+    locked: 0
