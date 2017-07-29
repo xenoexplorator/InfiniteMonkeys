@@ -108,6 +108,11 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &291972799 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1416193077875380, guid: c5bbc98a14735ff4ab30b5e15010738e,
+    type: 2}
+  m_PrefabInternal: {fileID: 772201523}
 --- !u!1 &352301570
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +190,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4244250905534306, guid: f8ba3e56af6b7d242a1d9e6250de9798, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1431833212072368, guid: f8ba3e56af6b7d242a1d9e6250de9798, type: 2}
       propertyPath: m_Name
@@ -416,7 +421,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4506621929196496, guid: 7ec0bd9212d9c2f48b04e75c20bbc1ea, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ec0bd9212d9c2f48b04e75c20bbc1ea, type: 2}
@@ -659,7 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  toFollow: {fileID: 0}
+  toFollow: {fileID: 291972799}
 --- !u!1 &1117555471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1017,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1937550393
 GameObject:
@@ -1305,7 +1310,7 @@ RectTransform:
   - {fileID: 1117555472}
   - {fileID: 2040985176}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
