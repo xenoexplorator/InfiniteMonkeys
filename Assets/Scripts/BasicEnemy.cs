@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BasicEnemy : JamObject {
 
-	private const int NONATTACK_WINDUP = 10;
-	private const int WINDUP_LENGTH = 5;
+	private const int COOLDOWN_LENGTH = 30;
+	private const int NONATTACK_WINDUP = 100;
+	private const int WINDUP_LENGTH = 30;
 	private float distanceToPlayer;
 	private float distanceToStart;
 	private bool aggroed = false;
@@ -41,7 +42,8 @@ public class BasicEnemy : JamObject {
 			hasBeenLeashed = true;
 		aggroed = distanceToPlayer < AggroDistance && !hasBeenLeashed;
 
-		speed = baseSpeed * (aggroed ? 1.0f : 0.5f) * (attackWindup < NONATTACK_WINDUP ? 0.0f : 1.0f);
+		speed = baseSpeed * (aggroed ? 1.0f : (distanceToStart < 0.1f ? 0.0f : 0.5f))
+			* (attackWindup < NONATTACK_WINDUP ? 0.0f : 1.0f);
 
 		if (aggroed) {
 			_direction = PlayerController.playerPosition - this.transform.position;
@@ -59,6 +61,7 @@ public class BasicEnemy : JamObject {
 	void UpdateAttack(float distanceToPlayer) {
 		if (distanceToPlayer < attackRange
 				&& attackCooldown == 0
+				&& attackWindup == NONATTACK_WINDUP
 				&& !hasBeenLeashed) {
 			attackWindup = WINDUP_LENGTH;
 		}
@@ -66,7 +69,7 @@ public class BasicEnemy : JamObject {
 			if (attackWindup == 0) {
 				Instantiate(Attack, this.transform.position + _direction * attackRange/2, Quaternion.identity);
 				attackWindup = NONATTACK_WINDUP;
-				attackCooldown = 30;
+				attackCooldown = COOLDOWN_LENGTH;
 			} else {
 				attackWindup -= 1;
 			}
