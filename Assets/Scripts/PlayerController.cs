@@ -159,7 +159,7 @@ public class PlayerController : JamObject {
 
 	#region Specials!
 	#region AOE Attack
-	private bool AOEAvailable = true;
+	public static bool AOEAvailable = true;
 	private bool isAimingAOE = false;
 	private GameObject _aimCursor;
 	void PrepareForAOEAttack()
@@ -194,7 +194,7 @@ public class PlayerController : JamObject {
 
 	#region Shield
 	//Shield Logic. Do we even have a shield?
-	private bool ShieldAvailable = true;
+	public static bool ShieldAvailable = true;
 	private bool ShieldUp = false;
 	private int ShieldUsedSoaks = 0;
 	private int ShieldMaxDamage = 3;
@@ -223,7 +223,7 @@ public class PlayerController : JamObject {
 	#endregion	
 
 	#region teleport
-	private bool TeleportAvailable = true;
+	public static bool TeleportAvailable = true;
 	void TeleportSpecial()
 	{
 		X = mouseRealPosition.x;
@@ -234,7 +234,7 @@ public class PlayerController : JamObject {
 
 	#region FullHeal
 	//FULL HEAL!!!
-	private bool FullHealAvailable = true;
+	public static bool FullHealAvailable = true;
 	void SpecialFullHeal()
 	{
 		health = MAX_HEALTH;
