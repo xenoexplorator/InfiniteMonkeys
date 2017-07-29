@@ -132,8 +132,10 @@ MonoBehaviour:
   baseSpeed: 0.04
   AggroDistance: 3
   LeashDistance: 6
+  attackRange: 0.6
   health: 5
   anglePadding: 20
+  Attack: {fileID: 1944521974042826, guid: 04f7e59f2631c224c99f0bd227ac7fe5, type: 2}
 --- !u!212 &212626891391297860
 SpriteRenderer:
   m_ObjectHideFlags: 1
