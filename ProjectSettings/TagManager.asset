@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ENEMY
+  - Princess
   layers:
   - Default
   - TransparentFX

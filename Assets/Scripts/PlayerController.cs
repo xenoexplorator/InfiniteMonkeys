@@ -15,6 +15,7 @@ public class PlayerController : JamObject {
 	public GameObject aimCursorObject;
 	public float baseSpeed;
 	public Animator anim;
+	public SpriteRenderer sprRender;
 
 	#region Properties
 	private  float verticalSpeed = 0;
@@ -30,17 +31,21 @@ public class PlayerController : JamObject {
 
 	// Update is called once per frame
 	void Update () {
+
 		GetInputs ();
 		verticalSpeed = wKey - sKey;
 		horizontalSpeed = dKey - aKey;
 
-		if (horizontalSpeed == 1)
+		if (horizontalSpeed != 0) {
 			anim.SetTrigger ("side_walk_right");
-		else if (horizontalSpeed == -1)
-			anim.SetTrigger ("side_walk_left");
+			if (horizontalSpeed == -1)
+				sprRender.flipX = true;
+			else if (horizontalSpeed == 1)
+				sprRender.flipX = false;
+		}
 		else
 			anim.SetTrigger ("idle");
-		
+
 		playerPosition = this.transform.position;
 
 		if (horizontalSpeed != 0 || verticalSpeed != 0) {
