@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : JamObject {
 
 	public static Vector3 playerPosition;
+	public static bool reloadAvailable = false;
+	public static PrincessTrashcan princessInRange;
 
 	public const int MAX_HEALTH = 100;
 	public const float ATTACK_DISTANCE = 0.8f;
@@ -40,6 +42,41 @@ public class PlayerController : JamObject {
 		if (spaceKey == 1)
 			Attack ();
 
+		if (princessInRange != null && princessInRange.helped == false)
+			CheckForReloads ();
+		else
+			UseSpecials ();
+
+		UpdateShield ();
+		princessInRange = null;
+	}
+
+	void CheckForReloads()
+	{
+		if (Input.GetKeyDown (KeyCode.E) && !AOEAvailable){
+			AOEAvailable = true;
+			princessInRange.HelpedWith (SpecialType.AOE);
+		}
+
+		if (Input.GetKeyDown (KeyCode.F) && !FullHealAvailable){
+			FullHealAvailable = true;
+			princessInRange.HelpedWith (SpecialType.HEAL);
+		}
+
+		if (Input.GetMouseButtonDown (1) && !TeleportAvailable){
+			TeleportAvailable = true;
+			princessInRange.HelpedWith (SpecialType.TELEPORT);
+		}
+
+		if (Input.GetMouseButtonDown (2) && !ShieldAvailable){
+			ShieldAvailable = true;
+			princessInRange.HelpedWith (SpecialType.SHIELD);
+		}
+
+	}
+
+	void UseSpecials()
+	{
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (AOEAvailable) {
 				if (isAimingAOE)
@@ -59,8 +96,6 @@ public class PlayerController : JamObject {
 
 		if (Input.GetMouseButtonDown (2) && ShieldAvailable)
 			SpecialShield ();
-
-		UpdateShield ();
 	}
 
 	void GetInputs()
