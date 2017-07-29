@@ -17,13 +17,14 @@ public class DungeonParser : MonoBehaviour {
 
 	public void Parse() {
 		var step = 0.64f;
-		var y = 0f;
+		var y = 0f - 7*step;
 		var lines = Fichier.text.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
 		foreach (var line in lines) {
-			float x = 0f;
+			float x = 0f - 7*step;
 			foreach (char c in line) {
 				var id = Array.IndexOf(TileIDs, c);
-				Instantiate(TileMap[id], new Vector3(x, y, 0), Quaternion.identity);
+				// File line numbers and Unity y-coordinate are in opposite directions
+				Instantiate(TileMap[id], new Vector3(x, -y, 0), Quaternion.identity);
 				x += step;
 			}
 			y += step;
