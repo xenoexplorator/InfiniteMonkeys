@@ -11,7 +11,9 @@ public class PlayerController : JamObject {
 
 	public GameObject basicAttackPrefab;
 	public GameObject aimCursorObject;
+	public float baseSpeed;
 
+	#region Properties
 	private  float verticalSpeed = 0;
 	private float horizontalSpeed = 0;
 	private int wKey = 0;
@@ -20,25 +22,19 @@ public class PlayerController : JamObject {
 	private int dKey = 0;
 	private int spaceKey = 0;
 	private Vector3 mouseRealPosition;
-
 	private int health = MAX_HEALTH;
-
-	public float baseSpeed;
-
-	// Use this for initialization
-	void Start () {
-	}
+	#endregion
 
 	// Update is called once per frame
 	void Update () {
 		GetInputs ();
 		verticalSpeed = wKey - sKey;
 		horizontalSpeed = dKey - aKey;
+		playerPosition = this.transform.position;
 
 		if (horizontalSpeed != 0 || verticalSpeed != 0) {
 			direction = (Mathf.Atan2 (verticalSpeed, horizontalSpeed)) * 180 / Mathf.PI;
 			Move ();
-			playerPosition = this.transform.position;
 		}
 
 		if (spaceKey == 1)
@@ -54,7 +50,17 @@ public class PlayerController : JamObject {
 		}
 		if (isAimingAOE)
 			PrepareForAOEAttack ();
-			
+
+		if (Input.GetKeyDown (KeyCode.F) && FullHealAvailable)
+			SpecialFullHeal ();
+
+		if (Input.GetMouseButtonDown (1) && TeleportAvailable)
+			TeleportSpecial ();
+
+		if (Input.GetMouseButtonDown (2) && ShieldAvailable)
+			SpecialShield ();
+
+		UpdateShield ();
 	}
 
 	void GetInputs()
@@ -84,18 +90,20 @@ public class PlayerController : JamObject {
 	void Attack()
 	{
 		Instantiate (basicAttackPrefab, (this.transform.position + (_direction * ATTACK_DISTANCE)), Quaternion.identity);
-		//Who knows what will happen here. Not me, that's for sure.
 	}
 
 	//I guessed this is how we should take damage
 	public void TakeDamage(int dmg)
 	{
-		health -= dmg;
 		if (ShieldUp) {
-			ShieldUsed++;
-			ShieldUp = ShieldUsed >= ShieldMaxDamage ? false : true;
+			ShieldUsedSoaks++;
+			ShieldUp = ShieldUsedSoaks >= ShieldMaxDamage ? false : true;
+			if (!ShieldUp)
+				StopShield ();
 			return;
 		}
+		else
+			health -= dmg;
 		if (health <= 0)
 			GameOver ();
 	}
@@ -137,17 +145,43 @@ public class PlayerController : JamObject {
 
 	#region Shield
 	//Shield Logic. Do we even have a shield?
-	public bool ShieldAvailable = true;
+	private bool ShieldAvailable = true;
 	private bool ShieldUp = false;
-	private int ShieldUsed = 0;
+	private int ShieldUsedSoaks = 0;
 	private int ShieldMaxDamage = 3;
+	private int ShieldMaxFrames = 150;
+	private int currentShieldFrames = 0;
 	void SpecialShield()
 	{
 		ShieldAvailable = false;
 		ShieldUp = true;
+		ShieldUsedSoaks = 0;
+	}
+
+	void UpdateShield()
+	{
+		currentShieldFrames = ShieldUp ? currentShieldFrames++ : 0;
+		if (currentShieldFrames > ShieldMaxFrames)
+			StopShield ();
+	}
+
+	void StopShield()
+	{
+		ShieldUp = false;
+		ShieldUsedSoaks = 0;
+		currentShieldFrames = 0;
 	}
 	#endregion	
 
+	#region teleport
+	private bool TeleportAvailable = true;
+	void TeleportSpecial()
+	{
+		X = mouseRealPosition.x;
+		Y = mouseRealPosition.y;
+		TeleportAvailable = false;
+	}
+	#endregion
 
 	#region FullHeal
 	//FULL HEAL!!!
@@ -163,7 +197,7 @@ public class PlayerController : JamObject {
 
 
 
-	//Shhhhhh, Shhhhhhhh, it's all over now
+	//Shhh, Shhhhhhhh, it's all over now
 	public void GameOver()
 	{
 	}
