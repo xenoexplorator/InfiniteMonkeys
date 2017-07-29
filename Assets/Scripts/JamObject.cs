@@ -34,10 +34,10 @@ public class JamObject : MonoBehaviour {
 		}
 	}
 
-	private Vector3 _direction;
+	protected Vector3 _direction;
 	public float direction{
 		get{ 
-			return Mathf.Atan2 (_direction.y, _direction.x);
+			return Mathf.Atan2 (_direction.y, _direction.x) * 180 / Mathf.PI;
 		}
 		set{ 
 			var _x = Mathf.Cos (value / 180 * Mathf.PI);

@@ -44,28 +44,35 @@ public class PlayerController : JamObject {
 
 	void Attack()
 	{
-		//Who knows what will happen here. Not me, at least.
+		//Who knows what will happen here. Not me, that's for sure.
 	}
 
+	
+	//Shield Logic. Do we even have a shield?
 	public bool ShieldAvailable = true;
-	public bool ShieldUp = false;
+	private bool ShieldUp = false;
+	private int ShieldUsed = 0;
+	private int ShieldMaxDamage = 3;
 	void SpecialShield()
 	{
 		ShieldAvailable = false;
 		ShieldUp = true;
 	}
 		
+	//I guessed this is how we should take damage
 	public void TakeDamage(int dmg)
 	{
 		health -= dmg;
 		if (ShieldUp) {
-			ShieldUp = false;
+			ShieldUsed++;
+			ShieldUp = ShieldUsed >= ShieldMaxDamage ? false : true;
 			return;
 		}
 		if (health <= 0)
 			GameOver ();
 	}
 
+	//FULL HEAL!!!
 	private bool FullHealAvailable = true;
 	void SpecialFullHeal()
 	{
@@ -73,6 +80,7 @@ public class PlayerController : JamObject {
 		FullHealAvailable = false;
 	}
 
+	//Shhhhhh, Shhhhhhhh, it's all over now
 	public void GameOver()
 	{
 	}
