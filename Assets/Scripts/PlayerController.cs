@@ -26,7 +26,7 @@ public class PlayerController : JamObject {
 	private int dKey = 0;
 	private int spaceKey = 0;
 	private Vector3 mouseRealPosition;
-	private int health = MAX_HEALTH;
+	public static int health = MAX_HEALTH;
 	#endregion
 
 	// Update is called once per frame
