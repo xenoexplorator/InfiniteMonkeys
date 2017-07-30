@@ -16,8 +16,7 @@ public class QuipsCollection : MonoBehaviour {
 	public static int TELEPORT = 0;
 	public static int ARMOR = 0;
 
-
-	void Start()
+	public static void ResetCollections()
 	{
 		WelcomeQuips.Clear ();
 		ReloadedAOE.Clear ();
@@ -30,6 +29,11 @@ public class QuipsCollection : MonoBehaviour {
 		HEAL = 0;
 		TELEPORT = 0;
 		ARMOR = 0;
+	}
+
+	void Start()
+	{
+		ResetCollections ();
 
 		WelcomeQuips.Add (@"Are you here to save me? No thanks, I'm fine here."); 
 		WelcomeQuips.Add (@"Oh, it's you again. What, do you want a medal or something?"); 

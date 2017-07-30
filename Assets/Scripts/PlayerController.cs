@@ -37,6 +37,15 @@ public class PlayerController : JamObject {
 	void Start()
 	{
 		health = MAX_HEALTH;
+		AOEAvailable = true;
+		FullHealAvailable = true;
+		reloadAvailable = true;
+		ShieldAvailable = true;
+		TeleportAvailable = true;
+		playerPosition = this.transform.position;
+		reloadAvailable = false;
+		princessInRange = false;
+		PrincessTrashcan.numberOfHelpReceived = 0;
 	}
 
 	// Update is called once per frame
