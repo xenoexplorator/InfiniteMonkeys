@@ -44,7 +44,7 @@ public class PlayerController : JamObject {
 		TeleportAvailable = true;
 		playerPosition = this.transform.position;
 		reloadAvailable = false;
-		princessInRange = false;
+		princessInRange = null;
 		PrincessTrashcan.numberOfHelpReceived = 0;
 	}
 
