@@ -10,7 +10,7 @@ public class PlayerController : JamObject {
 	public static PrincessTrashcan princessInRange;
 
 	public const int MAX_HEALTH = 100;
-	public const float ATTACK_DISTANCE = 1.8f;
+	public float ATTACK_DISTANCE = 1.8f;
 
 	public GameObject basicAttackPrefab;
 	public GameObject aimCursorObject;

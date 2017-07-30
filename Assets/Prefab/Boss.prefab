@@ -125,9 +125,10 @@ MonoBehaviour:
   LeashDistance: 15
   attackRange: 4
   health: 200
-  anglePadding: 12
+  anglePadding: 3
   Attack: {fileID: 1944521974042826, guid: d93ffcf6efa199843a8629883b83ee71, type: 2}
-  anim: {fileID: 0}
+  anim: {fileID: 95689043374348130}
+  isBoss: 1
 --- !u!212 &212837524289167806
 SpriteRenderer:
   m_ObjectHideFlags: 1
