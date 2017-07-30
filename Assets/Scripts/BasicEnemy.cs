@@ -7,7 +7,7 @@ public class BasicEnemy : JamObject {
 	public int COOLDOWN_LENGTH = 30;
 	private const int NONATTACK_WINDUP = 100;
 	public int WINDUP_LENGTH = 30;
-	private float distanceToPlayer;
+	public float distanceToPlayer;
 	private float distanceToStart;
 	private bool aggroed = false;
 	private Vector3 startingLocation;
