@@ -15,9 +15,7 @@ public class FollowObiject : JamObject {
 		}
 	}
 
-	public void SetToFollow(GameObject target, float spd) {
-		Debug.Log("Follow that player @ " + spd);
+	public void StartFollow(float spd) {
 		speed = spd;
-		toFollow = target;
 	}
 }
