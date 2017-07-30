@@ -20,7 +20,7 @@ public class QuipsCollection : MonoBehaviour {
 	void Start()
 	{
 		WelcomeQuips.Add (@"Are you here to save me? No thanks, I'm fine here."); 
-		WelcomeQuips.Add (@"Hey! You found me again. What, do you want a medal or something?"); 
+		WelcomeQuips.Add (@"Oh, it's you again. What, do you want a medal or something?"); 
 		WelcomeQuips.Add (@"There, I found a medal. Take it if you want."); 
 		WelcomeQuips.Add (@"You know what? That medal really suits you."); 
 		WelcomeQuips.Add (@"One man's trash is another princess's.... trash?");

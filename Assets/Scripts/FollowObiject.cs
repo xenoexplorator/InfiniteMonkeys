@@ -14,4 +14,8 @@ public class FollowObiject : JamObject {
 			this.Y = lerped.y;
 		}
 	}
+
+	public void StartFollow(float spd) {
+		speed = spd;
+	}
 }
