@@ -74,6 +74,7 @@ public class BasicEnemy : JamObject {
 			if (attackWindup == 0) {
 				var tempAttack = Instantiate(Attack, this.transform.position + _direction * attackRange/2, Quaternion.identity);
 				tempAttack.transform.rotation = new Quaternion (_direction.x, _direction.y, 0, 0);
+				tempAttack.SendMessage ("SetDirection", _direction);
 				attackWindup = NONATTACK_WINDUP;
 				attackCooldown = COOLDOWN_LENGTH;
 			} else {

@@ -48,6 +48,11 @@ public class JamObject : MonoBehaviour {
 
 	public float speed;
 
+	public void SetDirection(Vector3 vec)
+	{
+		_direction = vec;
+	}
+
 	public void Move()
 	{
 		this.transform.position = this.transform.position + (_direction * speed);
