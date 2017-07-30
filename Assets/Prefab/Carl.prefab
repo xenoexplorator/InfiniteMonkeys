@@ -124,7 +124,7 @@ MonoBehaviour:
   AggroDistance: 6
   LeashDistance: 10
   attackRange: 2
-  health: 5
+  health: 6
   anglePadding: 30
   Attack: {fileID: 1889690467636434, guid: 3cc99d45355c14b478e905d4ebdf346b, type: 2}
   anim: {fileID: 95131379683452806}
