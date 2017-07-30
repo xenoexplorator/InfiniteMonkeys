@@ -19,10 +19,10 @@ public class QuipsCollection : MonoBehaviour {
 
 	void Start()
 	{
-		WelcomeQuips.Add (@"Are you here to save me? No thanks, I'm fine here.");
-		WelcomeQuips.Add (@"Hey! You found me again. What, do you want a medal or something?");
-		WelcomeQuips.Add (@"There, I found a medal. Take it if you want.");
-		WelcomeQuips.Add (@"You know what? That medal really suits you.");
+		WelcomeQuips.Add (@"Hey, if you're bad, I can help you.");
+		WelcomeQuips.Add (@"I'm the best! And the worst. Mostly the worst.");
+		WelcomeQuips.Add (@"If you had an inventory I'd sell you stuff.");
+		WelcomeQuips.Add (@"You again? I guess bad company is better than alone.");
 		WelcomeQuips.Add (@"One man's trash is another princess's.... trash?");
 
 		ReloadedHealing.Add (@"Yeah you seem to need it.");

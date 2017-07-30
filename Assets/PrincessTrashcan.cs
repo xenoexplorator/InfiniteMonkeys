@@ -15,10 +15,6 @@ public class PrincessTrashcan : JamObject {
 
 	public const float DISTANCE_TO_INSULT = 5f;
 	public static int numberOfHelpReceived = 0;
-	public static JamObject medaille;
-
-	public float medailleSpeed = 0.01f;
-	public bool medailleGiven = false;
 
 	public GameObject textBubble;
 	public Text text;
