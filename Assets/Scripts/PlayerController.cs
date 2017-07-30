@@ -155,6 +155,7 @@ public class PlayerController : JamObject {
 		var attack = Instantiate (basicAttackPrefab, (this.transform.position + (_direction * ATTACK_DISTANCE)), Quaternion.identity);
 		if (_direction.x < 0)
 			attack.GetComponent<SpriteRenderer> ().flipX = false;
+		anim.SetTrigger ("side_attack");
 	}
 
 	//I guessed this is how we should take damage
