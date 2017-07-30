@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BasicEnemy : JamObject {
 
@@ -114,7 +115,10 @@ public class BasicEnemy : JamObject {
 	{
 		hasBeenLeashed = false;
 		health -= dmg;
-		if (health <= 0)
+		if (health <= 0) {
 			Destroy (this.gameObject);
+			if (isBoss)
+				SceneManager.LoadScene("Victory");
+		}
 	}
 }

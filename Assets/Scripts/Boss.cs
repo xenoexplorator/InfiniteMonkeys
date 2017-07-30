@@ -21,8 +21,5 @@ public class Boss : MonoBehaviour {
 			//audio.clip = music;
 			musicStarted = true;
 		}
-		if (monster.health <= 0) {
-			SceneManager.LoadScene("Victory");
-		}
 	}
 }
