@@ -256,9 +256,7 @@ public class PlayerController : JamObject {
 	{
 		health = MAX_HEALTH;
 		FullHealAvailable = false;
-		var test = Instantiate (healingAnimation, this.transform);
-		if (true)
-			test = test;
+		Instantiate (healingAnimation, this.transform);
 	}
 	#endregion
 
