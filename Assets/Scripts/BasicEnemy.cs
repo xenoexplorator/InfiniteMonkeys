@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BasicEnemy : JamObject {
 
-	private const int COOLDOWN_LENGTH = 30;
+	public int COOLDOWN_LENGTH = 30;
 	private const int NONATTACK_WINDUP = 100;
-	private const int WINDUP_LENGTH = 30;
+	public int WINDUP_LENGTH = 30;
 	private float distanceToPlayer;
 	private float distanceToStart;
 	private bool aggroed = false;
