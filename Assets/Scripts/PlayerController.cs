@@ -212,6 +212,8 @@ public class PlayerController : JamObject {
 	private int ShieldMaxDamage = 3;
 	private int ShieldMaxFrames = 150;
 	public static int currentShieldFrames = 0;
+
+	private GameObject shieldObject;
 	void SpecialShield()
 	{
 		ShieldAvailable = false;
