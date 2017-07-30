@@ -68,7 +68,7 @@ public class BasicEnemy : JamObject {
 				&& attackWindup == NONATTACK_WINDUP
 				&& !hasBeenLeashed) {
 			attackWindup = WINDUP_LENGTH;
-			anim.SetTrigger ("Avery_attack");
+			anim.SetTrigger ("Attack");
 		}
 		if (attackWindup < NONATTACK_WINDUP) {
 			if (attackWindup == 0) {
