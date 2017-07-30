@@ -13,6 +13,8 @@ public class EnemyAttack : JamObject {
 	void Update () {
 		if (spentTime > timer)
 			Destroy (this.gameObject);
+		if (_direction.x > 0)
+			GetComponent<SpriteRenderer> ().flipX = true;
 		
 		spentTime++;
 	}

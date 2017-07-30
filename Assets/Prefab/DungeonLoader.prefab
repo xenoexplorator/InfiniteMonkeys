@@ -56,6 +56,7 @@ MonoBehaviour:
   Spawns:
   - {fileID: 1431833212072368, guid: f8ba3e56af6b7d242a1d9e6250de9798, type: 2}
   - {fileID: 1055708333075776, guid: 6a3a5fafb94025346bca7a26e09517cd, type: 2}
+  - {fileID: 1142903630440486, guid: ea40ec9e27facf54b8b647d8505e20a8, type: 2}
   TileMap:
   - {fileID: 1079399708815284, guid: 239cc7b262314544fb6c49392921716a, type: 2}
   - {fileID: 1926608259894762, guid: b3d5dccfdc1339c40a6d29885f4dec90, type: 2}

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BasicEnemy : JamObject {
 
-	private const int COOLDOWN_LENGTH = 30;
+	public int COOLDOWN_LENGTH = 30;
 	private const int NONATTACK_WINDUP = 100;
-	private const int WINDUP_LENGTH = 30;
+	public int WINDUP_LENGTH = 30;
 	private float distanceToPlayer;
 	private float distanceToStart;
 	private bool aggroed = false;
@@ -68,12 +68,13 @@ public class BasicEnemy : JamObject {
 				&& attackWindup == NONATTACK_WINDUP
 				&& !hasBeenLeashed) {
 			attackWindup = WINDUP_LENGTH;
-			anim.SetTrigger ("Avery_attack");
+			anim.SetTrigger ("Attack");
 		}
 		if (attackWindup < NONATTACK_WINDUP) {
 			if (attackWindup == 0) {
 				var tempAttack = Instantiate(Attack, this.transform.position + _direction * attackRange/2, Quaternion.identity);
 				tempAttack.transform.rotation = new Quaternion (_direction.x, _direction.y, 0, 0);
+				tempAttack.SendMessage ("SetDirection", _direction);
 				attackWindup = NONATTACK_WINDUP;
 				attackCooldown = COOLDOWN_LENGTH;
 			} else {
