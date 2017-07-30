@@ -101,7 +101,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &1101372054333893892
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -125,7 +125,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &1101383068412161264
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -297,7 +297,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Goo_front
-  m_Speed: 0.07
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101037579450322206}
@@ -321,7 +321,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Goo_side_right
-  m_Speed: 0.07
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101383068412161264}
@@ -391,7 +391,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Goo_back
-  m_Speed: 0.07
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101949967649589882}
