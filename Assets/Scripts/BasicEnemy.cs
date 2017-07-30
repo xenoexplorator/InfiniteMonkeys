@@ -22,6 +22,7 @@ public class BasicEnemy : JamObject {
 	public int health;
 	public float anglePadding = 20;
 	public GameObject Attack;
+	public Animator anim;
 
 	// Use this for initialization
 	void Start () {
@@ -53,6 +54,9 @@ public class BasicEnemy : JamObject {
 		}
 		_direction.Normalize ();
 		direction += Random.Range (-anglePadding, anglePadding);
+
+		this.GetComponent<SpriteRenderer> ().flipX = _direction.x < 0 ? true : false;
+
 		Move ();
 		if (distanceToStart < AggroDistance)
 			hasBeenLeashed = false;
@@ -64,10 +68,12 @@ public class BasicEnemy : JamObject {
 				&& attackWindup == NONATTACK_WINDUP
 				&& !hasBeenLeashed) {
 			attackWindup = WINDUP_LENGTH;
+			anim.SetTrigger ("Avery_attack");
 		}
 		if (attackWindup < NONATTACK_WINDUP) {
 			if (attackWindup == 0) {
-				Instantiate(Attack, this.transform.position + _direction * attackRange/2, Quaternion.identity);
+				var tempAttack = Instantiate(Attack, this.transform.position + _direction * attackRange/2, Quaternion.identity);
+				tempAttack.transform.rotation = new Quaternion (_direction.x, _direction.y, 0, 0);
 				attackWindup = NONATTACK_WINDUP;
 				attackCooldown = COOLDOWN_LENGTH;
 			} else {

@@ -119,12 +119,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   baseSpeed: 0.04
-  AggroDistance: 3
-  LeashDistance: 6
+  AggroDistance: 4
+  LeashDistance: 9
   attackRange: 2
-  health: 5
+  health: 20
   anglePadding: 20
   Attack: {fileID: 1944521974042826, guid: 04f7e59f2631c224c99f0bd227ac7fe5, type: 2}
+  anim: {fileID: 95239604568309684}
 --- !u!212 &212270229570675460
 SpriteRenderer:
   m_ObjectHideFlags: 1

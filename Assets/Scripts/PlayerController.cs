@@ -152,8 +152,9 @@ public class PlayerController : JamObject {
 	public void TakeDamage(int dmg)
 	{
 		if (ShieldUp) {
-			ShieldUsedSoaks++;
-			ShieldUp = ShieldUsedSoaks >= ShieldMaxDamage ? false : true;
+			currentShieldFrames += 30;
+			if (ShieldUp && currentShieldFrames > ShieldMaxFrames)
+				ShieldUp = false;
 			if (!ShieldUp)
 				StopShield ();
 			return;
@@ -202,11 +203,11 @@ public class PlayerController : JamObject {
 	#region Shield
 	//Shield Logic. Do we even have a shield?
 	public static bool ShieldAvailable = true;
-	private bool ShieldUp = false;
+	public static bool ShieldUp = false;
 	private int ShieldUsedSoaks = 0;
 	private int ShieldMaxDamage = 3;
 	private int ShieldMaxFrames = 150;
-	private int currentShieldFrames = 0;
+	public static int currentShieldFrames = 0;
 	void SpecialShield()
 	{
 		ShieldAvailable = false;
@@ -216,7 +217,7 @@ public class PlayerController : JamObject {
 
 	void UpdateShield()
 	{
-		currentShieldFrames = ShieldUp ? currentShieldFrames++ : 0;
+		currentShieldFrames = ShieldUp ? currentShieldFrames+1 : 0;
 		if (currentShieldFrames > ShieldMaxFrames)
 			StopShield ();
 	}
