@@ -51,6 +51,11 @@ public class PlayerController : JamObject {
 				sprRender.flipX = true;
 			else if (horizontalSpeed == 1)
 				sprRender.flipX = false;
+		} else if (verticalSpeed != 0) {
+			if (verticalSpeed == 1)
+				anim.SetTrigger ("back");
+			else
+				anim.SetTrigger ("front");
 		}
 		else
 			anim.SetTrigger ("idle");
