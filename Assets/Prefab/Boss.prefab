@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61919265750628510}
   - component: {fileID: 50112800793127226}
   - component: {fileID: 114559835830044358}
+  - component: {fileID: 114541532358514306}
   m_Layer: 0
   m_Name: Boss
   m_TagString: ENEMY
@@ -106,6 +107,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114541532358514306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958963483078108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b64f328b1a33fa4fb0f1bfcf9533e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 0}
 --- !u!114 &114559835830044358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,6 +133,7 @@ MonoBehaviour:
   speed: 0
   COOLDOWN_LENGTH: 30
   WINDUP_LENGTH: 30
+  distanceToPlayer: 0
   baseSpeed: 0.08
   AggroDistance: 8
   LeashDistance: 15

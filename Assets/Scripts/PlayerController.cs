@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : JamObject {
 
-	public static Vector3 playerPosition;
+	public static Vector3 playerPosition = new Vector3(200,200,200);
 	public static bool reloadAvailable = false;
 	public static PrincessTrashcan princessInRange;
 

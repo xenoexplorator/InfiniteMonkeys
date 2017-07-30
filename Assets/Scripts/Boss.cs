@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour {
 	private BasicEnemy monster;
-	private bool musicStarted;
+	private bool musicStarted = false;
 	public AudioClip music;
 
 	// Use this for initialization
@@ -18,7 +18,8 @@ public class Boss : MonoBehaviour {
 		if (!musicStarted && monster.distanceToPlayer < 10) {
 			var camera = GameObject.FindWithTag("MainCamera");
 			var audio = camera.GetComponent<AudioSource>();
-			audio.clip = music;
+			//audio.clip = music;
+			musicStarted = true;
 		}
 		if (monster.health <= 0) {
 			SceneManager.LoadScene("Victory");
