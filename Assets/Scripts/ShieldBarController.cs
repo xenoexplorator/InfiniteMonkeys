@@ -11,7 +11,7 @@ public class ShieldBarController : MonoBehaviour {
 	void Update () {
 		if (PlayerController.ShieldUp) {
 			var theBarRectTransform = shieldBar.transform as RectTransform;
-			theBarRectTransform.sizeDelta = new Vector2 (200 - (150 * PlayerController.currentShieldFrames / 100), theBarRectTransform.sizeDelta.y);
+			theBarRectTransform.sizeDelta = new Vector2 (200 - (200 * PlayerController.currentShieldFrames / 300), theBarRectTransform.sizeDelta.y);
 		} else {
 			var theBarRectTransform = shieldBar.transform as RectTransform;
 			theBarRectTransform.sizeDelta = new Vector2 (0, theBarRectTransform.sizeDelta.y);

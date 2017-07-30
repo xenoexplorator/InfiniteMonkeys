@@ -152,9 +152,15 @@ MonoBehaviour:
     type: 2}
   aimCursorObject: {fileID: 1436889356614974, guid: eba03aadf3c3c0b4394e1d171390646c,
     type: 2}
-  baseSpeed: 0.05
+  baseSpeed: 0.08
   anim: {fileID: 95760328989617280}
   sprRender: {fileID: 212300835031369582}
+  teleportAnimation: {fileID: 1308469942209232, guid: 4880e546b8f3a8346bdc91e0c6276098,
+    type: 2}
+  shieldAnimation: {fileID: 1832426043323096, guid: 609b5cff8c9c19847b5d33b6b03b092e,
+    type: 2}
+  healingAnimation: {fileID: 1051962581510174, guid: c0817eb79c13062409fd39ba3a419db1,
+    type: 2}
 --- !u!212 &212300835031369582
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -127,7 +127,7 @@ public class PlayerController : JamObject {
 		aKey = Input.GetKey (KeyCode.A) ? 1 : 0;
 		sKey = Input.GetKey (KeyCode.S) ? 1 : 0;
 		dKey = Input.GetKey (KeyCode.D) ? 1 : 0;
-		speed = Input.GetKey (KeyCode.LeftShift) ? baseSpeed * 2 : baseSpeed;
+		speed = baseSpeed;
 		spaceKey = Input.GetKeyDown (KeyCode.Space) ? 1 : 0;
 	}
 
@@ -210,7 +210,7 @@ public class PlayerController : JamObject {
 	public static bool ShieldUp = false;
 	private int ShieldUsedSoaks = 0;
 	private int ShieldMaxDamage = 3;
-	private int ShieldMaxFrames = 150;
+	private int ShieldMaxFrames = 300;
 	public static int currentShieldFrames = 0;
 
 	private GameObject shieldObject;
@@ -219,6 +219,7 @@ public class PlayerController : JamObject {
 		ShieldAvailable = false;
 		ShieldUp = true;
 		ShieldUsedSoaks = 0;
+		shieldObject = Instantiate (shieldAnimation, this.transform);
 	}
 
 	void UpdateShield()
@@ -233,6 +234,7 @@ public class PlayerController : JamObject {
 		ShieldUp = false;
 		ShieldUsedSoaks = 0;
 		currentShieldFrames = 0;
+		Destroy (shieldObject);
 	}
 	#endregion	
 
@@ -243,6 +245,7 @@ public class PlayerController : JamObject {
 		X = mouseRealPosition.x;
 		Y = mouseRealPosition.y;
 		TeleportAvailable = false;
+		Instantiate (teleportAnimation, this.transform);
 	}
 	#endregion
 
@@ -253,6 +256,9 @@ public class PlayerController : JamObject {
 	{
 		health = MAX_HEALTH;
 		FullHealAvailable = false;
+		var test = Instantiate (healingAnimation, this.transform);
+		if (true)
+			test = test;
 	}
 	#endregion
 
