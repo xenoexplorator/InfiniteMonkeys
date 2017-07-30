@@ -17,6 +17,10 @@ public class PlayerController : JamObject {
 	public Animator anim;
 	public SpriteRenderer sprRender;
 
+	public GameObject teleportAnimation;
+	public GameObject shieldAnimation;
+	public GameObject healingAnimation;
+
 	#region Properties
 	private  float verticalSpeed = 0;
 	private float horizontalSpeed = 0;
