@@ -148,11 +148,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
+  ATTACK_DISTANCE: 0.9
   basicAttackPrefab: {fileID: 1944521974042826, guid: 0e2cc3f3c4f0b434a8630d999e297579,
     type: 2}
   aimCursorObject: {fileID: 1436889356614974, guid: eba03aadf3c3c0b4394e1d171390646c,
     type: 2}
-  baseSpeed: 0.04
+  baseSpeed: 0.05
   anim: {fileID: 95760328989617280}
   sprRender: {fileID: 212300835031369582}
   teleportAnimation: {fileID: 1308469942209232, guid: 4880e546b8f3a8346bdc91e0c6276098,
