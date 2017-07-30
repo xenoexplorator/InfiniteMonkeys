@@ -89,6 +89,7 @@ public class BasicEnemy : JamObject {
 	{
 		health -= dmg;
 		if (health <= 0)
+			hasBeenLeashed = false;
 			Destroy (this.gameObject);
 	}
 }

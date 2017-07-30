@@ -117,11 +117,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4244250905534306, guid: f8ba3e56af6b7d242a1d9e6250de9798, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 64.023735
+      value: 76.04
       objectReference: {fileID: 0}
     - target: {fileID: 4244250905534306, guid: f8ba3e56af6b7d242a1d9e6250de9798, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -32.246143
+      value: -26.56
       objectReference: {fileID: 0}
     - target: {fileID: 4244250905534306, guid: f8ba3e56af6b7d242a1d9e6250de9798, type: 2}
       propertyPath: m_LocalPosition.z
@@ -147,10 +147,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1431833212072368, guid: f8ba3e56af6b7d242a1d9e6250de9798, type: 2}
-      propertyPath: m_Name
-      value: ThePrincess (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 114620224544155266, guid: f8ba3e56af6b7d242a1d9e6250de9798,
         type: 2}
       propertyPath: textBubble
@@ -161,6 +157,10 @@ Prefab:
       propertyPath: text
       value: 
       objectReference: {fileID: 1395575614}
+    - target: {fileID: 1431833212072368, guid: f8ba3e56af6b7d242a1d9e6250de9798, type: 2}
+      propertyPath: m_Name
+      value: ThePrincess (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8ba3e56af6b7d242a1d9e6250de9798, type: 2}
   m_IsPrefabParent: 0
@@ -478,11 +478,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4486452456008860, guid: c5bbc98a14735ff4ab30b5e15010738e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4486452456008860, guid: c5bbc98a14735ff4ab30b5e15010738e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -27.2
       objectReference: {fileID: 0}
     - target: {fileID: 4486452456008860, guid: c5bbc98a14735ff4ab30b5e15010738e, type: 2}
       propertyPath: m_LocalPosition.z
