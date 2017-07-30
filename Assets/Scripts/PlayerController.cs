@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : JamObject {
 
@@ -273,5 +274,6 @@ public class PlayerController : JamObject {
 	//Shhh, Shhhhhhhh, it's all over now
 	public void GameOver()
 	{
+		SceneManager.LoadScene ("GameOver");
 	}
 }
