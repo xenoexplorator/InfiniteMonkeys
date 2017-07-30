@@ -22,10 +22,12 @@ public class PrincessTrashcan : JamObject {
 	private bool isInRangeToPlayer = false;
 	private bool quippedHello = false;
 	public bool helped = false;
+	private FollowObiject medaille;
 
 	// Use this for initialization
 	void Start () {
-		
+		var med = GameObject.FindWithTag("Medaille");
+		medaille = med.GetComponent<FollowObiject>();
 	}
 	// Update is called once per frame
 	public void Update () {
@@ -39,13 +41,10 @@ public class PrincessTrashcan : JamObject {
 			QuipsCollection.Welcome++;
 			quippedHello = true;
 		}
-		if (QuipsCollection.Welcome == 2 && !textBubble.activeSelf) {
-			var medaille = GameObject.FindWithTag("Medaille");
-			var follower = medaille.GetComponent<FollowObiject>();
-			if (follower.toFollow == null) {
-				var player = GameObject.FindWithTag("Player");
-				follower.SetToFollow(player, 0.01f);
-			}
+		if (QuipsCollection.Welcome > 2
+				&& !textBubble.activeSelf
+				&& medaille.speed == 0.0f) {
+			medaille.speed = 0.02f;
 		}
 	}
 
