@@ -375,8 +375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   something: {fileID: 970970940}
-  shake: 2
-  shakeAmount: 3
+  shake: 1
+  shakeAmount: 1.5
 --- !u!4 &614198562
 Transform:
   m_ObjectHideFlags: 0
