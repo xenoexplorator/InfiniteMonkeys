@@ -25,4 +25,9 @@ public class BasicPlayerAttack : JamObject {
 		if (other.tag == "ENEMY")
 			other.SendMessage ("TakeDamage", damage);
 	}
+
+	public void SetDamage(int dmg)
+	{
+		damage = dmg;
+	}
 }
