@@ -23,6 +23,7 @@ public class BasicEnemy : JamObject {
 	public float anglePadding = 20;
 	public GameObject Attack;
 	public Animator anim;
+	public bool isBoss = false;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +36,23 @@ public class BasicEnemy : JamObject {
 		var distanceToPlayer = Vector3.Distance (this.transform.position, PlayerController.playerPosition);
 		UpdateMovement(distanceToPlayer);
 		UpdateAttack(distanceToPlayer);
+		if (isBoss) {
+			BossUpdate ();
+		}
+	}
+
+	private string triggerToSet = "";
+
+	void BossUpdate()
+	{
+		if (_direction.x < -0.2f || _direction.x > 0.2f)
+			triggerToSet = "Walk";
+		else if (_direction.y < 0)
+			triggerToSet = "Down";
+		else if(_direction.y > 0)
+			triggerToSet = "Up";
+
+		anim.SetTrigger (triggerToSet);
 	}
 	
 	void UpdateMovement(float distanceToPlayer) {
@@ -55,7 +73,14 @@ public class BasicEnemy : JamObject {
 		_direction.Normalize ();
 		direction += Random.Range (-anglePadding, anglePadding);
 
-		this.GetComponent<SpriteRenderer> ().flipX = _direction.x < 0 ? true : false;
+		var tempRenderer = GetComponent<SpriteRenderer> ();
+		if (_direction.x < -0.2f)
+			tempRenderer.flipX = true;
+		else if(_direction.x > 0.2f)
+			tempRenderer.flipX = false;
+
+
+		//this.GetComponent<SpriteRenderer> ().flipX = _direction.x < -0.2f ? true : false;
 
 		Move ();
 		if (distanceToStart < AggroDistance)

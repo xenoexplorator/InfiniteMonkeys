@@ -1415,6 +1415,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114559835830044358, guid: 546b053355359084abf1beaed59d0012,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1863520771}
+    - target: {fileID: 114559835830044358, guid: 546b053355359084abf1beaed59d0012,
+        type: 2}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 546b053355359084abf1beaed59d0012, type: 2}
   m_IsPrefabParent: 0
@@ -1661,6 +1671,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1760945427}
+--- !u!95 &1863520771 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95689043374348130, guid: 546b053355359084abf1beaed59d0012,
+    type: 2}
+  m_PrefabInternal: {fileID: 1483323688}
 --- !u!1 &1937550393
 GameObject:
   m_ObjectHideFlags: 0
