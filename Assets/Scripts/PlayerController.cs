@@ -192,7 +192,6 @@ public class PlayerController : JamObject {
 	{
 		var attack = Instantiate (basicAttackPrefab, (this.transform.position + (_direction * ATTACK_DISTANCE)), Quaternion.identity);
 		attack.transform.position = new Vector3(mouseRealPosition.x,mouseRealPosition.y,0);
-		//var attack = Instantiate (basicAttackPrefab,mouseRealPosition,Quaternion.identity);
 		attack.transform.localScale = new Vector3 (5, 5, 0);
 		AOEAvailable = false;
 		StopAimingAOE ();
