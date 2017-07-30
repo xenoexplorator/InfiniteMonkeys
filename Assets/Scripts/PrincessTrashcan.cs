@@ -27,20 +27,26 @@ public class PrincessTrashcan : JamObject {
 	void Start () {
 		
 	}
-	private int frameTimer = 0;
-	private int maxFramesForQuip = 250;
 	// Update is called once per frame
 	public void Update () {
 		isInRangeToPlayer = Vector3.Distance (this.transform.position, PlayerController.playerPosition) < DISTANCE_TO_INSULT ? true : false;
-		if(isInRangeToPlayer)
+		if(isInRangeToPlayer) {
 			PlayerController.princessInRange = this;
+		}
 
 		if (isInRangeToPlayer && !quippedHello) {
 			Quip (QuipsCollection.WelcomeQuips[QuipsCollection.Welcome]);
 			QuipsCollection.Welcome++;
 			quippedHello = true;
 		}
-		UpdateQuip ();
+		if (QuipsCollection.Welcome == 2 && !textBubble.activeSelf) {
+			var medaille = GameObject.FindWithTag("Medaille");
+			var follower = medaille.GetComponent<FollowObiject>();
+			if (follower.toFollow == null) {
+				var player = GameObject.FindWithTag("Player");
+				follower.SetToFollow(player, 0.01f);
+			}
+		}
 	}
 
 	public void HelpedWith(SpecialType type)
@@ -70,18 +76,10 @@ public class PrincessTrashcan : JamObject {
 		}
 	}
 		
-	protected void UpdateQuip()
-	{
-		if (textBubble.activeSelf)
-			frameTimer++;
-		if (frameTimer > maxFramesForQuip)
-			textBubble.SetActive (false);
-	}
-
 	protected void Quip(string speach)
 	{
-		textBubble.SetActive (true);
-		frameTimer = 0;
 		text.text = speach;
+		var hider = textBubble.GetComponent<AutoHide> ();
+		hider.UnHide ();
 	}
 }

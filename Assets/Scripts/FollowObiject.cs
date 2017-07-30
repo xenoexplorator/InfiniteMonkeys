@@ -14,4 +14,10 @@ public class FollowObiject : JamObject {
 			this.Y = lerped.y;
 		}
 	}
+
+	public void SetToFollow(GameObject target, float spd) {
+		Debug.Log("Follow that player @ " + spd);
+		speed = spd;
+		toFollow = target;
+	}
 }
