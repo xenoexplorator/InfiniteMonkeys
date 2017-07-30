@@ -87,6 +87,7 @@ public class BasicEnemy : JamObject {
 
 	public void TakeDamage(int dmg)
 	{
+		hasBeenLeashed = false;
 		health -= dmg;
 		if (health <= 0)
 			Destroy (this.gameObject);

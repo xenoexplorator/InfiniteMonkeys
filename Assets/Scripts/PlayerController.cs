@@ -51,6 +51,11 @@ public class PlayerController : JamObject {
 				sprRender.flipX = true;
 			else if (horizontalSpeed == 1)
 				sprRender.flipX = false;
+		} else if (verticalSpeed != 0) {
+			if (verticalSpeed == 1)
+				anim.SetTrigger ("back");
+			else
+				anim.SetTrigger ("front");
 		}
 		else
 			anim.SetTrigger ("idle");
@@ -150,6 +155,7 @@ public class PlayerController : JamObject {
 		var attack = Instantiate (basicAttackPrefab, (this.transform.position + (_direction * ATTACK_DISTANCE)), Quaternion.identity);
 		if (_direction.x < 0)
 			attack.GetComponent<SpriteRenderer> ().flipX = false;
+		anim.SetTrigger ("side_attack");
 	}
 
 	//I guessed this is how we should take damage
@@ -256,9 +262,7 @@ public class PlayerController : JamObject {
 	{
 		health = MAX_HEALTH;
 		FullHealAvailable = false;
-		var test = Instantiate (healingAnimation, this.transform);
-		if (true)
-			test = test;
+		Instantiate (healingAnimation, this.transform);
 	}
 	#endregion
 
