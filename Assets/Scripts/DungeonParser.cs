@@ -29,16 +29,16 @@ public class DungeonParser : MonoBehaviour {
 			foreach (char c in line) {
 				x += step;
 				if (c == '0') { // player spawn
-					Instantiate(TileMap[4], new Vector3(x, -y, 0), Quaternion.identity);
+					Instantiate(TileMap[4], new Vector3(x, -y, 0), Quaternion.identity, gameObject.transform);
 					player.transform.position = new Vector3(x, -y, 0);
 				} else if (c >= '1' && c <= '3') { // princess & enemy spawns
-					Instantiate(TileMap[4], new Vector3(x, -y, 0), Quaternion.identity);
+					Instantiate(TileMap[4], new Vector3(x, -y, 0), Quaternion.identity, gameObject.transform);
 					Instantiate(Spawns[c - '1'], new Vector3(x, -y, 0), Quaternion.identity);
 				} else {
 					var id = Array.IndexOf(TileIDs, c);
 					if (id == -1) continue;
 					// File line numbers and Unity y-coordinate are in opposite directions
-					Instantiate(TileMap[id], new Vector3(x, -y, 0), Quaternion.identity);
+					Instantiate(TileMap[id], new Vector3(x, -y, 0), Quaternion.identity, gameObject.transform);
 				}
 			}
 		}
