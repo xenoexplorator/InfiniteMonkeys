@@ -41,28 +41,28 @@ public class QuipsCollection : MonoBehaviour {
 		WelcomeQuips.Add (@"You know what? That medal really suits you."); 
 		WelcomeQuips.Add (@"One man's trash is another princess's.... trash?");
 
-		ReloadedHealing.Add (@"Yeah you seem to need it.");
-		ReloadedHealing.Add (@"That again? Okay.");
-		ReloadedHealing.Add (@"Who's in distress now?");
-		ReloadedHealing.Add (@"If you make it through I'll unlock easy mode for you.");
+		ReloadedHealing.Add (@"I'm sure you'll need that again.");
+		ReloadedHealing.Add (@"I told you you'd need it again.");
+		ReloadedHealing.Add (@"That won't fix your face you know.");
+		ReloadedHealing.Add (@"Make it through this and I'll unlock easy mode for you.");
 		ReloadedHealing.Add (@"This is getting humiliating for you...");
 
-		ReloadedAOE.Add (@"Blow them up!");
-		ReloadedAOE.Add (@"Soooo.... did you miss? Is that why you pick it up again?");
-		ReloadedAOE.Add (@"You could just attack regularly for once.");
-		ReloadedAOE.Add (@"You know this isn't your only power, right?");
+		ReloadedAOE.Add (@"Did your last one miss?");
+		ReloadedAOE.Add (@"You should try something else if you can't aim.");
+		ReloadedAOE.Add (@"That not the only attack you can use you know...");
+		ReloadedAOE.Add (@"Are you compensating for something?");
 		ReloadedAOE.Add (@"This is getting humiliating for you...");
 
-		ReloadedTeleport.Add (@"When in a though spot...");
-		ReloadedTeleport.Add (@"A bit shy, I see.");
-		ReloadedTeleport.Add (@"Have you tried fighting?");
-		ReloadedTeleport.Add (@"You know, you can't win by running away.");
+		ReloadedTeleport.Add (@"Bit of a tough spot back there?");
+		ReloadedTeleport.Add (@"Come on, those things aren't that hard to kill.");
+		ReloadedTeleport.Add (@"Oh, I see. You're just afraid of them.");
+		ReloadedTeleport.Add (@"You can't run away forever, you know.");
 		ReloadedTeleport.Add (@"This is getting humiliating for you...");
 
-		ReloadedArmor.Add (@"Always use protection.");
-		ReloadedArmor.Add (@"I said always but I didn't mean it that much.");
-		ReloadedArmor.Add (@"This won't save you all the time.");
-		ReloadedArmor.Add (@"This is not how you're supposed to do it.");
+		ReloadedArmor.Add (@"Now who's in distress.");
+		ReloadedArmor.Add (@"Who ever heard of a knight who needed a princess to protect him anyway?");
+		ReloadedArmor.Add (@"You can't always rely on that you know.");
+		ReloadedArmor.Add (@"You really need to learn how to dodge.");
 		ReloadedArmor.Add (@"This is getting humiliating for you...");
 
 		initiated = true;
